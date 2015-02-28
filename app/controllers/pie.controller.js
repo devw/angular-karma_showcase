@@ -1,6 +1,5 @@
 /*global angular*/
-angular.module('pie', [])
-.controller('pieController', ['$scope', function pieController ($scope) {
+app.controller('pieController', ['$scope', function pieController ($scope) {
     'use strict';
 
     $scope.slices = 8;

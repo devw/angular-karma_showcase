@@ -4,7 +4,7 @@ describe("pieController", function () {
 	var $scope = {};
 
 	beforeEach(function () {
-		module('pie');
+		module('app');
 
 		inject(function($controller){
 			// The injector unwraps the underscores (_) from around the parameter names when matching
