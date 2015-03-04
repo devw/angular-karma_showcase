@@ -1,0 +1,21 @@
+{
+  "name": "angular_test",
+  "version": "0.0.0",
+  "homepage": "https://github.com/devw/angular_test",
+  "authors": [
+    "Antonio Pierro <antonio.pierro@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.14",
+    "angular-resource": "~1.3.14",
+    "angular-mocks": "~1.3.14"
+  }
+}
