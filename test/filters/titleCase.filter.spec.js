@@ -6,7 +6,7 @@ describe('titleCase filter', function () {
 
     beforeEach(function () {
         module('app');
-        inject(function ($injector) {
+        angular.mock.inject(function ($injector) {
             $filter = $injector.get('$filter');
             filter = $filter('titleCase');
         });

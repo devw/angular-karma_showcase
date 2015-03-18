@@ -1,20 +1,21 @@
 /*global describe*/
 describe('PasswordController', function () {
-    var $controller;
-    var $scope = {};
+    var $passwordController;
+    var $scope;
 
     beforeEach(function () {
-        module('app');
+        angular.mock.module('app');
 
-        inject(function(_$controller_){
-            // The injector unwraps the underscores (_) from around the parameter names when matching
-            $controller = _$controller_;
+        angular.mock.inject(function($controller, $rootScope){
+            $scope = $rootScope.$new();
+            passwordController = $controller('PasswordController', { 
+                $scope: $scope 
+            });;
         });
     });
 
     describe('$scope.grade', function () {
         it('sets the strength to "strong" if the password length is >8 chars', function() {
-            $controller('PasswordController', { $scope: $scope });
             $scope.password = 'asdasdasds';
             $scope.grade();
             expect($scope.strength).toEqual('strong');

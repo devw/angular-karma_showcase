@@ -1,15 +1,15 @@
 /* describe, beforeEach, inject*/
 describe("pieController", function () {
-	// var $controller;
-	var $scope = {};
+	var pieController;
 
 	beforeEach(function () {
-		module('app');
+		angular.mock.module('app');
 
-		inject(function($controller){
-			// The injector unwraps the underscores (_) from around the parameter names when matching
-			// $controller = _$controller_;
-			$controller('pieController', { $scope: $scope });
+		angular.mock.inject(function($controller, $rootScope){
+			$scope = $rootScope.$new();
+			pieController = $controller('pieController', { 
+				$scope: $scope 
+			});
 		});
 	});
 
