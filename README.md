@@ -20,10 +20,10 @@
 
     <-- spec-runner.html -->
     
-    <link rel="stylesheet" href="./node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
-    <script src="./node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
-    <script src="./node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
-    <script src="./node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+    <link rel="stylesheet" href="./bower_components/jasmine/lib/jasmine-core/jasmine.css">
+    <script src="./bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script src="./bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="./bower_components/jasmine/lib/jasmine-core/boot.js"></script>
 
 ### Example code of an angular controller 
     
