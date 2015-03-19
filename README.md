@@ -87,6 +87,89 @@
         });
     });
     
+### Example code of Angular Directive
+
+    /*app/directives/stateful.directive.js*/
+    /*global app*/
+    app.directive('nsStateful', function () {
+        'use strict';
+        return {
+            restrict: 'A', // only matches attribute name
+            scope: false,
+            // Creating a Directive that Manipulates the DOM
+            link: function link(scope, element, attrs) {
+                if (!attrs.nsStateful) {
+                    throw 'You must provide a class name in order to use the nsStateful directive.';
+                }
+    
+                element.bind('click', function () {
+                    scope.$apply(function () {
+                        if (!element.hasClass(attrs.nsStateful)) {
+                            element.addClass(attrs.nsStateful);
+                        } else {
+                            element.removeClass(attrs.nsStateful);
+                        }
+                    });
+                });
+            }
+        };
+    });
+
+### Testing angular directive
+
+    describe('My directive test', function() {
+        'use strict';
+    
+        var el,
+            simpleHtml = 'my html code';
+    
+        beforeEach(function () {
+            angular.mock.module('myApp');
+    
+            angular.mock.inject(function ($compile, $rootScope) {
+                // $compile is used to link scope
+                el = $compile(simpleHtml)($rootScope);
+            });
+        });
+    
+        it('Describe what your method should do.', function() {
+            // test code
+        });
+    });
+
+### Example code of Angular Filter
+
+    app.filter('titleCase', function () {
+        'use strict';
+        return function (val) {
+            return val ? val.replace(/\w\S*/g, function (txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            }) : val;
+        };
+    });
+
+### Testing Angular Filter
+
+    /*global describe*/
+    describe('myFilter test', function () {
+        'use strict';
+    
+        var myFilter;
+    
+        beforeEach(function () {
+    
+            module('myApp');
+    
+            angular.mock.inject(function ($filter) {
+                myFilter = $filter('myFilter');
+            });
+        });
+    
+        it('Fiter description', function() {
+            // some code
+        });
+    });
+    
 ### Create the package.json file
 
     > npm init
