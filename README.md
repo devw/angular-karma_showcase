@@ -15,6 +15,15 @@
     > bower install angular-resource --save-dev
     > bower install jasmine --save-dev
     > touche .gitignore # Git should ignore bower_components/*
+    
+### Create you test html file to see the results:
+
+    <-- spec-runner.html -->
+    
+    <link rel="stylesheet" href="./node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <script src="./node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="./node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="./node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
 
 ### Example code of an angular controller 
     
