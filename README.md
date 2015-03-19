@@ -16,9 +16,54 @@
     > bower install jasmine --save-dev
     > touche .gitignore # Git should ignore bower_components/*
 
-### Create the app
-   
-  TODO
+### Example code of an angular controller 
+    
+    // app/controllers/password.controller.js 
+    app.controller('passwordController', ['$scope', function PasswordController($scope) {
+        'use strict';
+    
+        $scope.password = '';
+        $scope.strength = 'weak';
+    
+        $scope.grade = function() {
+    
+            var size = $scope.password.length;
+    
+            if (size > 8) {
+                $scope.strength = 'strong';
+            } else if (size > 3) {
+                $scope.strength = 'medium';
+            } else {
+                $scope.strength = 'weak';
+            }
+        };
+    
+    }]);
+
+### Testing angular controller
+
+    /*global describe, beforeEach, it*/
+    describe('MyControllerToTest', function () {
+        var myController;
+        var $scope;
+    
+        beforeEach(function () {
+            angular.mock.module('myApp');
+    
+            angular.mock.inject(function($controller, $rootScope){
+                $scope = $rootScope.$new();
+                myController = $controller('myController', { 
+                    $scope: $scope 
+                });;
+            });
+        });
+    
+        describe('$scope.myMethod', function () {
+            it('Describe what your method should do', function() {
+                // test code
+            });
+        });
+    });
     
 ### Create the package.json file
 
