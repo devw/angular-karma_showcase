@@ -16,18 +16,31 @@
     > bower install jasmine --save-dev
     > touche .gitignore # Git should ignore bower_components/*
     
-### Create you test html file to see the results:
+### Run Jasmine on the browser
 
-    <-- spec-runner.html -->
+1. Create your test html file to see the results
+
+        <-- spec-runner.html -->
+        <link rel="stylesheet" href="./bower_components/jasmine/lib/jasmine-core/jasmine.css">
+        <script src="./bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+        <script src="./bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+        <script src="./bower_components/jasmine/lib/jasmine-core/boot.js"></script>
     
-    <link rel="stylesheet" href="./bower_components/jasmine/lib/jasmine-core/jasmine.css">
-    <script src="./bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
-    <script src="./bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
-    <script src="./bower_components/jasmine/lib/jasmine-core/boot.js"></script>
+2. Create your first html file to see the results
+
+        /*test/simple.spec.js*/
+        /*global describe, beforeEach, it*/
+        describe('Simple test', function() {
+            it('should be true...', function() {
+                expect(true).toBeTruthy();
+            });
+        });
+        
 
 ### Example code of an angular controller 
     
     // app/controllers/password.controller.js 
+    // Inline Array Annotation
     app.controller('passwordController', ['$scope', function PasswordController($scope) {
         'use strict';
     
