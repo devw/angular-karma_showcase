@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/devw/angular_test.svg)](https://travis-ci.org/devw/angular_test)
+[![Build Status](https://travis-ci.org/devw/angular-karma_showcase.svg?branch=master)](https://travis-ci.org/devw/angular-karma_showcase)
 
 ## Angualar Karma showcase
 
