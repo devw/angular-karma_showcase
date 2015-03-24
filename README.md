@@ -61,28 +61,6 @@
         });
     });
 
-### Testing Angular Directive
-
-    describe('My directive test', function() {
-        'use strict';
-    
-        var el,
-            simpleHtml = 'my html code';
-    
-        beforeEach(function () {
-            angular.mock.module('myApp');
-    
-            angular.mock.inject(function ($compile, $rootScope) {
-                // $compile is used to link scope
-                el = $compile(simpleHtml)($rootScope);
-            });
-        });
-    
-        it('Describe what your method should do.', function() {
-            // test code
-        });
-    });
-
 ### Testing Angular Filter
 
     /*global describe*/
@@ -102,6 +80,31 @@
     
         it('Fiter description', function() {
             // some code
+        });
+    });
+
+### Testing Angular Directive
+
+    /*global describe, beforeEach, it, $, module, app, angular, expect*/
+    describe('naYourDirective', function() {
+        'use strict';
+
+        var el,
+            simpleHtml = '<button na-your-directive="some-class"></button>';
+
+        beforeEach(angular.mock.module('myApp'));
+
+        beforeEach(function() {
+            angular.mock.inject(function ($compile, $rootScope) {
+                el = $compile(simpleHtml)($rootScope);
+            });
+        });
+
+        it('Should should be able to .... ', function() {
+            /* code example */
+            expect(el.hasClass('some-class')).toBeFalsy();
+            el.triggerHandler('click');
+            expect(el.hasClass('some-class')).toBeTruthy();
         });
     });
     

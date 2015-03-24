@@ -2,31 +2,20 @@
 describe('nsStateful', function() {
     'use strict';
 
-    var $rootScope,
-        $scope,
-        $compile,
-        el,
-        $body = $('body'),
+    var el,
         simpleHtml = '<button ns-stateful="red"></button>';
 
     beforeEach(angular.mock.module('app'));
 
     beforeEach(function() {
-        angular.mock.inject(function (_$compile_, _$rootScope_) {
-            // The injector unwraps the underscores (_) from around the parameter names when matching
-            $compile = _$compile_;
-            $rootScope = _$rootScope_;
+        angular.mock.inject(function ($compile, $rootScope) {
             el = $compile(simpleHtml)($rootScope);
         });
-
-        $body.append(el);
-        $rootScope.$digest();
     });
 
     it('Should should be able to toggle the class based on clicks.', function() {
         expect(el.hasClass('red')).toBeFalsy();
-        el.click();
-        $rootScope.$digest();
+        el.triggerHandler('click');
         expect(el.hasClass('red')).toBeTruthy();
     });
 });
