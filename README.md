@@ -157,6 +157,23 @@
 
 2. Travis cannot start chrome browser, so you should change it in PhantomJS and you need also to install karma-phantomjs-launcher
 
+#### Test with protractor
+
+    describe('angularjs homepage', function() {
+      it('should greet the named user', function() {
+        browser.get('http://localhost/~antonio/aks/');
+    
+        element(by.model('password')).sendKeys('asdsaddsdadsdsadsadsds');
+    
+        var greeting = element(by.binding('strength'));
+    
+        console.log(greeting.getText());
+    
+        expect(greeting.getText()).toContain('strong');
+      });
+    
+    });
+
 #### Example code of an Angular Controller 
     
     // app/controllers/password.controller.js 
@@ -232,3 +249,5 @@
         
         # Windows OS
         > export PATH=/c/Windows/System32/:$PATH
+        
+
